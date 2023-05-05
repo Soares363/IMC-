@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+        <p id="Titulo">Calculadora do Soares</p>
+    </header>
+
+    <main>
+        <div id="calcs">
+            <form action="">
+                <input type="number" class="input" id="peso" placeholder="Insira seu peso em kg">
+                <input type="number" class="input" id="altura" placeholder="Incira sua altura em M">
+                <button type="button" class="botao" id="envia">Enviar</button>
+                <button type="reset" class="botao" id="limpa" >Limpar</button>
+
+                <p id="resposta"></p>
+                <p id="caracteriza"></p>
+            </form>
+        </div>
+
+
+        <script>
+            var peso = document.getElementById("peso")
+            var altura = document.getElementById("altura")
+            var envia = document.getElementById("envia")
+            var resposta = document.getElementById("resposta")
+            var caracteriza = document.getElementById("caracteriza")
+            var imc = 0
+
+            function capturaDadosDoInput() {
+                var valor = parseFloat(peso.value)
+                var valor2 = parseFloat(altura.value)
+
+                var imc = valor / (valor2 * valor2)
+                imc = imc.toFixed(1)
+
+                if(imc < 18.5){
+                    caracteriza.innerHTML = ("Isso se caracteriza como: Magreza")
+                }else if (imc > 18.5 && imc < 25){
+                    caracteriza.innerHTML = ("Isso se caracteriza como: Normal")
+                }else if (imc >= 25 && imc < 30){
+                    caracteriza.innerHTML = ("Isso se caracteriza como: Sobrepeso")
+                }else if(imc >= 30 && imc < 40){
+                    caracteriza.innerHTML = ("Isso se caracteriza como: Obesidade")
+                }else{
+                    caracteriza.innerHTML = ("Isso se caracteriza como: Obesidade grave")
+                }
+
+                // alert(imc)
+                resposta.innerHTML = ("Seu IMC é: " + imc)
+            }
+
+
+            envia.addEventListener("click", capturaDadosDoInput)
+        </script>
+    </main>
+
+</body>
+</html>

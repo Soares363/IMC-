@@ -1,0 +1,56 @@
+*{
+    margin: 0;
+    font-family: 'Quicksand', sans-serif;
+}
+
+
+header{
+    background-color: #008584;
+    padding: 30px;
+}
+#Titulo{
+    font-size: 30px;
+    font-family: 'Quicksand', sans-serif;
+    color: aliceblue;
+}
+
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    bottom: 50%;
+}
+#calcs{
+    background-color: #e9e9e9;
+    border-radius: 20px;
+    margin: 15px;
+    padding: 20px;
+    width: 500px;
+    text-align: center;
+}
+
+#calcs .input{
+    /* display: flex; */
+    margin: 15px;
+    border-radius: 15px;
+    padding: 14px;
+    width: 400px;
+}
+
+#calcs .botao{
+    border-radius: 15px;
+    padding: 14px;
+    color: white;
+    background-color: rgb(55, 116, 55);
+    border: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#resposta{
+    padding: 15px;
+}
+
